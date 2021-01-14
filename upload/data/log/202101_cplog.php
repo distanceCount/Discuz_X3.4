@@ -318,3 +318,16 @@
 <?PHP exit;?>	1610608470	admin	1	127.0.0.1	styles	GET={}; POST={};
 <?PHP exit;?>	1610608511	admin	1	127.0.0.1	styles	GET={operation=import; }; POST={};
 <?PHP exit;?>	1610608512	admin	1	127.0.0.1	styles	GET={}; POST={};
+<?PHP exit;?>	1610610631	admin	1	127.0.0.1		GET={}; POST={};
+<?PHP exit;?>	1610610631	admin	1	127.0.0.1	index	GET={}; POST={};
+<?PHP exit;?>	1610610831	admin	1	127.0.0.1	tools	GET={operation=updatecache; }; POST={};
+<?PHP exit;?>	1610610832	admin	1	127.0.0.1	tools	GET={operation=updatecache; step=2; type={0=data; 1=tpl; }; confirmed=确定; }; POST={type={0=data; 1=tpl; }; confirmed=确定; };
+<?PHP exit;?>	1610610833	admin	1	127.0.0.1	tools	GET={operation=updatecache; step=3; type=data_tpl; }; POST={};
+<?PHP exit;?>	1610612578	admin	1	127.0.0.1	tools	GET={operation=updatecache; }; POST={};
+<?PHP exit;?>	1610612579	admin	1	127.0.0.1	founder	GET={operation=perm; }; POST={};
+<?PHP exit;?>	1610612580	admin	1	127.0.0.1	setting	GET={operation=sec; }; POST={};
+<?PHP exit;?>	1610612581	admin	1	127.0.0.1	group	GET={operation=setting; }; POST={};
+<?PHP exit;?>	1610612582	admin	1	127.0.0.1	portalcategory	GET={}; POST={};
+<?PHP exit;?>	1610612582	admin	1	127.0.0.1	moderate	GET={}; POST={};
+<?PHP exit;?>	1610612583	admin	1	127.0.0.1	nav	GET={}; POST={};
+<?PHP exit;?>	1610612583	admin	1	127.0.0.1	setting	GET={operation=basic; }; POST={};

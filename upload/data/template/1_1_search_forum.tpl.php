@@ -1,10 +1,10 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('forum');
 0
-|| checktplrefresh('./template/default/search/forum.htm', './template/default/search/header.htm', 1610607016, '1', './data/template/1_1_search_forum.tpl.php', './template/default', 'search/forum')
-|| checktplrefresh('./template/default/search/forum.htm', './template/default/search/pubsearch.htm', 1610607016, '1', './data/template/1_1_search_forum.tpl.php', './template/default', 'search/forum')
-|| checktplrefresh('./template/default/search/forum.htm', './template/default/search/thread_list.htm', 1610607016, '1', './data/template/1_1_search_forum.tpl.php', './template/default', 'search/forum')
-|| checktplrefresh('./template/default/search/forum.htm', './template/default/search/footer.htm', 1610607016, '1', './data/template/1_1_search_forum.tpl.php', './template/default', 'search/forum')
-|| checktplrefresh('./template/default/search/forum.htm', './template/default/common/header_common.htm', 1610607016, '1', './data/template/1_1_search_forum.tpl.php', './template/default', 'search/forum')
+|| checktplrefresh('./template/default/search/forum.htm', './template/default/search/header.htm', 1610611382, '1', './data/template/1_1_search_forum.tpl.php', './template/default', 'search/forum')
+|| checktplrefresh('./template/default/search/forum.htm', './template/default/search/pubsearch.htm', 1610611382, '1', './data/template/1_1_search_forum.tpl.php', './template/default', 'search/forum')
+|| checktplrefresh('./template/default/search/forum.htm', './template/default/search/thread_list.htm', 1610611382, '1', './data/template/1_1_search_forum.tpl.php', './template/default', 'search/forum')
+|| checktplrefresh('./template/default/search/forum.htm', './template/default/search/footer.htm', 1610611382, '1', './data/template/1_1_search_forum.tpl.php', './template/default', 'search/forum')
+|| checktplrefresh('./template/default/search/forum.htm', './template/default/common/header_common.htm', 1610611382, '1', './data/template/1_1_search_forum.tpl.php', './template/default', 'search/forum')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
