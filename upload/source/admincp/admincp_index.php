@@ -287,20 +287,20 @@ showtablerow('', array(), array(
 showtablefooter();
 showformfooter();
 
-showtableheader('Discuz! &#x5F00;&#x6E90;&#x8D21;&#x732E;&#x8005;', 'fixpadding');
+/*showtableheader('Discuz! &#x5F00;&#x6E90;&#x8D21;&#x732E;&#x8005;', 'fixpadding');
 showtablerow('', array('', 'class="td21" style="text-align:right;"'),
 	'<a href="https://gitee.com/ComsenzDiscuz/DiscuzX/contributors?ref=master" class="lightlink2 smallfont" target="_blank">Click Here To See Them</a>'
 );
 showtablefooter();
-
+*/
 
 loaducenter();
 
 if(empty($newversion['newversion']['qqqun'])){
   $newversion['newversion']['qqqun'] = '73'.'210'.'36'.'90';
 }
-
-showtableheader('home_sys_info', 'fixpadding left" style="width : 48%;');
+// 系统信息 程序版本
+/*showtableheader('home_sys_info', 'fixpadding left" style="width : 48%;');
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	cplang('home_discuz_version'),
 	'Discuz! '.DISCUZ_VERSION.' R'.DISCUZ_RELEASE.' '.strtoupper(CHARSET).''
@@ -313,13 +313,14 @@ foreach ($newversion['newversion']['downlist'] as $key => $value){
    $downlist[] = '<a href="'.diconv($value['url'], 'utf-8', CHARSET).'" target="_blank">'.discuzcode(strip_tags(diconv($value['title'], 'utf-8', CHARSET)), 1, 0).'</a>';
 }
 
+// 查看最新版本
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	cplang('home_check_newversion'),
     ($newversion['newversion']['release'] ? ($newversion['newversion']['release'] != DISCUZ_RELEASE ? '<b style="color:red;">' : '').'Discuz! '.$newversion['newversion']['version'].' R'.$newversion['newversion']['release'].' '.strtoupper(CHARSET).' '.($newversion['newversion']['release'] != DISCUZ_RELEASE ? '</b>' : '') : '<a href="https://www.dismall.com/thread-73-1-1.html" target="_blank">&#20320;&#30340;&#26381;&#21153;&#22120;&#26080;&#27861;&#26816;&#27979;&#26032;&#29256;&#65292;&#35831;&#28857;&#20987;&#26597;&#30475;&#26032;&#29256;</a>').
 	  ' <a href="'.ADMINSCRIPT.'?action=index&checknewversion&formhash='.$_G['formhash'].'">[ &#x5237;&#x65B0; ]</a>&nbsp;&nbsp;<br><br>'.
     (!empty($downlist) ? implode('&#x3001;', $downlist).($newversion['newversion']['qqqun'] ? '<span class="bold">&nbsp;&nbsp;|&nbsp;&nbsp;QQ&#x7FA4;&#xFF1A;'.$newversion['newversion']['qqqun'].'</span>' : '') : '<span class="bold"><a href="https://gitee.com/3dming/DiscuzL/attach_files" target="_blank">&#x6700;&#x65B0;&#x7248;&#x6253;&#x5305;&#x4E0B;&#x8F7D;</a> | QQ&#x7FA4;&#xFF1A;73'.'21'.'03'.'690</span>')
 ));
-
+// UCenter 客户端版本
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	cplang('home_ucclient_version'),
 	'UCenter '.UC_CLIENT_VERSION.' Release '.UC_CLIENT_RELEASE
@@ -369,11 +370,11 @@ if(!empty($newversion['news'])){
         '',
     ));
 }
-showtablefooter();
+showtablefooter();*/
 
 echo '<div class="clear"></div>';
 
-showtableheader('home_dev', 'fixpadding');
+/*showtableheader('home_dev', 'fixpadding');
 showtablerow('', array('class="vtop td24 lineheight"'), array(
 	cplang('home_dev_copyright'),
 	'<span class="bold">&#x817e;&#x8baf;&#x4e91;&#x8ba1;&#x7b97;&#xff08;&#x5317;&#x4eac;&#xff09;&#x6709;&#x9650;&#x8d23;&#x4efb;&#x516c;&#x53f8;</span>'
@@ -437,7 +438,7 @@ showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight"'), ar
 	<a href="'.ADMINSCRIPT.'?action=cloudaddons" class="lightlink2" target="_blank">Discuz! &#24212;&#29992;&#20013;&#24515;</a>,
 	<a href="https://gitee.com/ComsenzDiscuz/DiscuzX" class="lightlink2" target="_blank">Discuz! X Git</a>
 '));
-showtablefooter();
+showtablefooter();*/
 
 echo '</div>';
 
