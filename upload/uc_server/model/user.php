@@ -150,7 +150,7 @@ class usermodel {
 	}
 
 	function edit_user($username, $oldpw, $newpw, $email, $ignoreoldpw = 0, $questionid = '', $answer = '') {
-		$data = $this->db->fetch_first("SELECT username, uid, password, salt FROM ".UC_DBTABLEPRE."members WHERE username='$username'");
+		$data = $this->db->fetch_first("SELECT username, uid, password FROM ".UC_DBTABLEPRE."members WHERE username='$username'");
 
 		if($ignoreoldpw) {
 			$isprotected = $this->db->result_first("SELECT COUNT(*) FROM ".UC_DBTABLEPRE."protectedmembers WHERE uid = '$data[uid]'");

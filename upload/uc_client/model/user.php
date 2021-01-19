@@ -130,8 +130,8 @@ class usermodel {
 	function check_login($username, $password, &$user) {
 		$user = $this->get_user_by_username($username);
 		if(empty($user['username'])) {
-			return -1;
-		} elseif($user['password'] != md5(md5($password).$user['salt'])) {
+            return -1;
+        } elseif($user['password'] != md5(md5($password).$user['salt'])) {
 			return -2;
 		}
 		return $user['uid'];
@@ -139,18 +139,22 @@ class usermodel {
 
 	function add_user($username, $password, $email, $uid = 0, $questionid = '', $answer = '', $regip = '') {
 		$regip = empty($regip) ? $this->base->onlineip : $regip;
-		$salt = substr(uniqid(rand()), -6);
-		$password = md5(md5($password).$salt);
+		//$salt = substr(uniqid(rand()), -6);
+		//$password = md5(md5($password).$salt);
+		//注册Bcrypt加密
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
+
 		$sqladd = $uid ? "uid='".intval($uid)."'," : '';
 		$sqladd .= $questionid > 0 ? " secques='".$this->quescrypt($questionid, $answer)."'," : " secques='',";
-		$this->db->query("INSERT INTO ".UC_DBTABLEPRE."members SET $sqladd username='$username', password='$password', email='$email', regip='$regip', regdate='".$this->base->time."', salt='$salt'");
+		$this->db->query("INSERT INTO ".UC_DBTABLEPRE."members SET $sqladd username='$username', password='$password', email='$email', regip='$regip', regdate='".$this->base->time."'");
 		$uid = $this->db->insert_id();
 		$this->db->query("INSERT INTO ".UC_DBTABLEPRE."memberfields SET uid='$uid'");
 		return $uid;
 	}
 
 	function edit_user($username, $oldpw, $newpw, $email, $ignoreoldpw = 0, $questionid = '', $answer = '') {
-		$data = $this->db->fetch_first("SELECT username, uid, password, salt FROM ".UC_DBTABLEPRE."members WHERE username='$username'");
+		$data = $this->db->fetch_first("SELECT username, uid, password FROM ".UC_DBTABLEPRE."members WHERE username='$username'");
 
 		if($ignoreoldpw) {
 			$isprotected = $this->db->result_first("SELECT COUNT(*) FROM ".UC_DBTABLEPRE."protectedmembers WHERE uid = '$data[uid]'");
@@ -159,11 +163,12 @@ class usermodel {
 			}
 		}
 
-		if(!$ignoreoldpw && $data['password'] != md5(md5($oldpw).$data['salt'])) {
+		if(!$ignoreoldpw && !password_verify($oldpw,$data['password'])) {
 			return -1;
 		}
 
-		$sqladd = $newpw ? "password='".md5(md5($newpw).$data['salt'])."'" : '';
+		//password = '.md5(md5($newpw).$data['salt']).'
+		$sqladd = $newpw ? "password='".password_hash($newpw, PASSWORD_DEFAULT)."'" : '';
 		$sqladd .= $email ? ($sqladd ? ',' : '')." email='$email'" : '';
 		if($questionid !== '') {
 			if($questionid > 0) {

@@ -127,10 +127,12 @@ class usercontrol extends base {
 			$user = $_ENV['user']->get_user_by_username($username);
 		}
 
-		$passwordmd5 = preg_match('/^\w{32}$/', $password) ? $password : md5($password);
+		//$passwordmd5 = preg_match('/^\w{32}$/', $password) ? $password : md5($password);
 		if(empty($user)) {
 			$status = -1;
-		} elseif($user['password'] != md5($passwordmd5.$user['salt'])) {
+		//} elseif($user['password'] != md5($passwordmd5.$user['salt'])) {
+        //登录使用Bcrypt加密校验
+        }elseif(!password_verify($password,$user['password'])){
 			$status = -2;
 		} elseif($checkques && $user['secques'] != $_ENV['user']->quescrypt($questionid, $answer)) {
 			$status = -3;
