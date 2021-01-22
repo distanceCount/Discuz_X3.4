@@ -4,7 +4,7 @@ $_CACHE['apps'] = array (
   array (
     'appid' => '1',
     'type' => 'DISCUZX',
-    'name' => '学习中心',
+    'name' => '学习BBS',
     'url' => 'http://localhost:63342/Discuz_X3.4/upload',
     'ip' => '',
     'viewprourl' => '',

@@ -29,8 +29,16 @@ class usermodel {
 	}
 
 	function get_user_by_username($username) {
-		$arr = $this->db->fetch_first("SELECT * FROM ".UC_DBTABLEPRE."members WHERE username='$username'");
-		return $arr;
+        //$arr = $this->db_sys1->fetch_first("SELECT * FROM ".UC_DBTABLEPRE_SYS1."members WHERE student_no='$username'");
+        //$arr = DB_BI::fetch_first("SELECT * FROM ".DB_BI::table('sys_student')." where student_no = '$username'");
+        $arr = $this->db->fetch_first("SELECT * FROM ".UC_DBTABLEPRE."members WHERE username='$username'");
+        //if ($arr === null){
+            //$arr = DB_BI::fetch_first("SELECT * FROM ".DB_BI::table('sys_user')." where user_name = '$username'");
+            //$arr = $this->db_sys2->fetch_first("SELECT * FROM ".UC_DBTABLEPRE_SYS2."members WHERE user_name='$username'");
+            //return $arr;
+        //}else{
+            return $arr;
+        //}
 	}
 
 	function get_user_by_email($email) {
@@ -167,8 +175,7 @@ class usermodel {
 			return -1;
 		}
 
-		//password = '.md5(md5($newpw).$data['salt']).'
-		$sqladd = $newpw ? "password='".password_hash($newpw, PASSWORD_DEFAULT)."'" : '';
+		$sqladd = $newpw ? "password='".md5(md5($newpw).$data['salt'])."'" : '';
 		$sqladd .= $email ? ($sqladd ? ',' : '')." email='$email'" : '';
 		if($questionid !== '') {
 			if($questionid > 0) {

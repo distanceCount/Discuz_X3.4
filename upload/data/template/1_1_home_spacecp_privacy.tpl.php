@@ -1,9 +1,9 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('spacecp_privacy');
 0
-|| checktplrefresh('./template/default/home/spacecp_privacy.htm', './template/default/home/spacecp_header.htm', 1611022182, '1', './data/template/1_1_home_spacecp_privacy.tpl.php', './template/default', 'home/spacecp_privacy')
-|| checktplrefresh('./template/default/home/spacecp_privacy.htm', './template/default/home/spacecp_footer.htm', 1611022182, '1', './data/template/1_1_home_spacecp_privacy.tpl.php', './template/default', 'home/spacecp_privacy')
-|| checktplrefresh('./template/default/home/spacecp_privacy.htm', './template/default/home/spacecp_header_name.htm', 1611022182, '1', './data/template/1_1_home_spacecp_privacy.tpl.php', './template/default', 'home/spacecp_privacy')
-|| checktplrefresh('./template/default/home/spacecp_privacy.htm', './template/default/home/spacecp_header_name.htm', 1611022182, '1', './data/template/1_1_home_spacecp_privacy.tpl.php', './template/default', 'home/spacecp_privacy')
+|| checktplrefresh('./template/default/home/spacecp_privacy.htm', './template/default/home/spacecp_header.htm', 1611302321, '1', './data/template/1_1_home_spacecp_privacy.tpl.php', './template/default', 'home/spacecp_privacy')
+|| checktplrefresh('./template/default/home/spacecp_privacy.htm', './template/default/home/spacecp_footer.htm', 1611302321, '1', './data/template/1_1_home_spacecp_privacy.tpl.php', './template/default', 'home/spacecp_privacy')
+|| checktplrefresh('./template/default/home/spacecp_privacy.htm', './template/default/home/spacecp_header_name.htm', 1611302321, '1', './data/template/1_1_home_spacecp_privacy.tpl.php', './template/default', 'home/spacecp_privacy')
+|| checktplrefresh('./template/default/home/spacecp_privacy.htm', './template/default/home/spacecp_header_name.htm', 1611302321, '1', './data/template/1_1_home_spacecp_privacy.tpl.php', './template/default', 'home/spacecp_privacy')
 ;?><?php include template('common/header'); ?><div id="pt" class="bm cl">
 <div class="z">
 <a href="./" class="nvhm" title="首页"><?php echo $_G['setting']['bbname'];?></a> <em>&rsaquo;</em>
@@ -313,7 +313,7 @@ $iconnames['pusearticle'] = '生成文章';?><table cellspacing="0" cellpadding=
 <div class="appl"><div class="tbn">
 <h2 class="mt bbda">设置</h2>
 <ul>
-<li<?php echo $actives['avatar'];?>><a href="home.php?mod=spacecp&amp;ac=avatar">修改头像</a></li>
+<!--<li<?php echo $actives['avatar'];?>><a href="home.php?mod=spacecp&amp;ac=avatar">修改头像</a></li>-->
 <li<?php echo $actives['profile'];?>><a href="home.php?mod=spacecp&amp;ac=profile">个人资料</a></li>
 <?php if($_G['setting']['verify']['enabled'] && allowverify()) { ?>
 <li<?php echo $actives['verify'];?>><a href="<?php if($_G['setting']['verify']['enabled']) { ?>home.php?mod=spacecp&ac=profile&op=verify<?php } else { ?>home.php?mod=spacecp&ac=videophoto<?php } ?>">认证</a></li>
@@ -323,7 +323,7 @@ $iconnames['pusearticle'] = '生成文章';?><table cellspacing="0" cellpadding=
 <li<?php echo $actives['privacy'];?>><a href="home.php?mod=spacecp&amp;ac=privacy">隐私筛选</a></li>
 
 <?php if($_G['setting']['sendmailday']) { ?><li<?php echo $actives['sendmail'];?>><a href="home.php?mod=spacecp&amp;ac=sendmail">邮件提醒</a></li><?php } ?>
-<li<?php echo $actives['password'];?>><a href="home.php?mod=spacecp&amp;ac=profile&amp;op=password">密码安全</a></li>
+<!--<li<?php echo $actives['password'];?>><a href="home.php?mod=spacecp&amp;ac=profile&amp;op=password">密码安全</a></li>-->
 
 <?php if($_G['setting']['creditspolicy']['promotion_visit'] || $_G['setting']['creditspolicy']['promotion_register']) { ?>
 <li<?php echo $actives['promotion'];?>><a href="home.php?mod=spacecp&amp;ac=promotion">访问推广</a></li>

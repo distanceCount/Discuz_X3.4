@@ -13,6 +13,9 @@ class usermodel {
 
 	var $db;
 	var $base;
+    var $db_sys1;
+    var $db_sys2;
+
 
 	function __construct(&$base) {
 		$this->usermodel($base);
@@ -21,6 +24,8 @@ class usermodel {
 	function usermodel(&$base) {
 		$this->base = $base;
 		$this->db = $base->db;
+		$this->db_sys1 = $base->db_sys1;
+		$this->db_sys2 = $base->db_sys2;
 	}
 
 	function get_user_by_uid($uid) {
@@ -28,7 +33,7 @@ class usermodel {
 		return $arr;
 	}
 
-	function get_user_by_username($username) {
+    function get_user_by_username($username) {
 		$arr = $this->db->fetch_first("SELECT * FROM ".UC_DBTABLEPRE."members WHERE username='$username'");
 		return $arr;
 	}
@@ -139,11 +144,12 @@ class usermodel {
 
 	function add_user($username, $password, $email, $uid = 0, $questionid = '', $answer = '', $regip = '') {
 		$regip = empty($regip) ? $this->base->onlineip : $regip;
-		$salt = substr(uniqid(rand()), -6);
-		$password = md5(md5($password).$salt);
+		//$salt = substr(uniqid(rand()), -6);
+		//$password = md5(md5($password).$salt);
+        $password = password_hash($password, PASSWORD_DEFAULT);
 		$sqladd = $uid ? "uid='".intval($uid)."'," : '';
 		$sqladd .= $questionid > 0 ? " secques='".$this->quescrypt($questionid, $answer)."'," : " secques='',";
-		$this->db->query("INSERT INTO ".UC_DBTABLEPRE."members SET $sqladd username='$username', password='$password', email='$email', regip='$regip', regdate='".$this->base->time."', salt='$salt'");
+		$this->db->query("INSERT INTO ".UC_DBTABLEPRE."members SET $sqladd username='$username', password='$password', email='$email', regip='$regip', regdate='".$this->base->time."'");
 		$uid = $this->db->insert_id();
 		$this->db->query("INSERT INTO ".UC_DBTABLEPRE."memberfields SET uid='$uid'");
 		return $uid;
@@ -159,11 +165,11 @@ class usermodel {
 			}
 		}
 
-		if(!$ignoreoldpw && $data['password'] != md5(md5($oldpw).$data['salt'])) {
-			return -1;
-		}
+        if(!$ignoreoldpw && !password_verify($oldpw,$data['password'])) {
+            return -1;
+        }
 
-		$sqladd = $newpw ? "password='".md5(md5($newpw).$data['salt'])."'" : '';
+        $sqladd = $newpw ? "password='".md5(md5($newpw).$data['salt'])."'" : '';
 		$sqladd .= $email ? ($sqladd ? ',' : '')." email='$email'" : '';
 		if($questionid !== '') {
 			if($questionid > 0) {

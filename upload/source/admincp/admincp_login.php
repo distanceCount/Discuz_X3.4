@@ -68,7 +68,7 @@ EOT;
 <tr>
 	<td class="login">
 		<!--<h1>Discuz! Administrator's Control Panel</h1>-->
-		<img src="static/image/common/Control Panel.png" alt="学习中心" border="0">
+		<img src="static/image/common/Control Panel.png" alt="学习BBS" border="0">
 	</td>
 
 	<td>

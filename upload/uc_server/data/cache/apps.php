@@ -18,33 +18,6 @@ $_CACHE['apps'] = array (
     'tagtemplates' => '',
     'allowips' => '',
   ),
-  2 => 
-  array (
-    'appid' => '2',
-    'type' => 'OTHER',
-    'name' => '学习中心',
-    'url' => 'http://localhost:8080/',
-    'authkey' => '123456789',
-    'ip' => '',
-    'viewprourl' => '',
-    'apifilename' => 'uc.php',
-    'charset' => '',
-    'dbcharset' => '',
-    'synlogin' => '1',
-    'recvnote' => '1',
-    'extra' => 
-    array (
-      'apppath' => '',
-      'extraurl' => 
-      array (
-      ),
-    ),
-    'tagtemplates' => '<?xml version="1.0" encoding="ISO-8859-1"?>
-<root>
-	<item id="template"><![CDATA[]]></item>
-</root>',
-    'allowips' => '',
-  ),
 );
 
 ?>

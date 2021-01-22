@@ -87,9 +87,12 @@
 <div class="rfm">
 <table>
 <tr>
-<th>安全提问:</th>
-<td><select id="loginquestionid_<?php echo $loginhash;?>" width="213" name="questionid"<?php if(!$questionexist) { ?> onchange="if($('loginquestionid_<?php echo $loginhash;?>').value > 0) {$('loginanswer_row_<?php echo $loginhash;?>').style.display='';} else {$('loginanswer_row_<?php echo $loginhash;?>').style.display='none';}"<?php } ?>>
-<option value="0"><?php if($questionexist) { ?>安全提问<?php } else { ?>安全提问(未设置请忽略)<?php } ?></option>
+    <span class="rfm spancenter">
+        请使用学习中心系统的账号和密码登录
+    </span>
+<!--<th>安全提问:</th>
+<td><select id="loginquestionid_<?php /*echo $loginhash;*/?>" width="213" name="questionid"<?php /*if(!$questionexist) { */?> onchange="if($('loginquestionid_<?php /*echo $loginhash;*/?>').value > 0) {$('loginanswer_row_<?php /*echo $loginhash;*/?>').style.display='';} else {$('loginanswer_row_<?php /*echo $loginhash;*/?>').style.display='none';}"<?php /*} */?>>
+<option value="0"><?php /*if($questionexist) { */?>安全提问<?php /*} else { */?>安全提问(未设置请忽略)<?php /*} */?></option>
 <option value="1">母亲的名字</option>
 <option value="2">爷爷的名字</option>
 <option value="3">父亲出生的城市</option>
@@ -97,7 +100,7 @@
 <option value="5">您个人计算机的型号</option>
 <option value="6">您最喜欢的餐馆名称</option>
 <option value="7">驾驶执照最后四位数字</option>
-</select></td>
+</select></td>-->
 </tr>
 </table>
 </div>

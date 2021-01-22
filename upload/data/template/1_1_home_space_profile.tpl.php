@@ -1,18 +1,18 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('space_profile');
 0
-|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/home/space_header.htm', 1610956639, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
-|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/home/space_profile_body.htm', 1610956639, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
-|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/home/space_userabout.htm', 1610956639, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
-|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/common/header_common.htm', 1610956639, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
-|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/home/space_diy.htm', 1610956639, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
-|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/home/space_header_personalnv.htm', 1610956639, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
+|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/home/space_header.htm', 1611301811, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
+|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/home/space_profile_body.htm', 1611301811, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
+|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/home/space_userabout.htm', 1611301811, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
+|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/common/header_common.htm', 1611301811, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
+|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/home/space_diy.htm', 1611301811, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
+|| checktplrefresh('./template/default/home/space_profile.htm', './template/default/home/space_header_personalnv.htm', 1611301811, '1', './data/template/1_1_home_space_profile.tpl.php', './template/default', 'home/space_profile')
 ;?>
 <?php if($_G['setting']['homepagestyle']) { $_G[cookie][extstyle] = false;?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET;?>" />
 <?php if($_G['config']['output']['iecompatible']) { ?><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE<?php echo $_G['config']['output']['iecompatible'];?>" /><?php } ?>
-<title><?php if(!empty($navtitle)) { ?><?php echo $navtitle;?> - <?php } if(empty($nobbname)) { ?> <?php echo $_G['setting']['bbname'];?> - <?php } ?> 学习中心</title>
+<title><?php if(!empty($navtitle)) { ?><?php echo $navtitle;?> - <?php } if(empty($nobbname)) { ?> <?php echo $_G['setting']['bbname'];?> - <?php } ?> 学习BBS</title>
 <?php echo $_G['setting']['seohead'];?>
 
 <meta name="keywords" content="<?php if(!empty($metakeywords)) { echo dhtmlspecialchars($metakeywords); } ?>" />

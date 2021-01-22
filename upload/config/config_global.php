@@ -14,6 +14,20 @@ $_config['db']['1']['tablepre'] = 'pre_';
 $_config['db']['slave'] = '';
 $_config['db']['common']['slave_except_table'] = '';
 
+
+//这里面2对应映射配置
+$_config['db']['2']['dbhost'] = 'localhost';
+$_config['db']['2']['dbuser'] = 'root';
+$_config['db']['2']['dbpw'] = 'root';
+$_config['db']['2']['dbcharset'] = 'utf8';
+$_config['db']['2']['pconnect'] = '0';
+$_config['db']['2']['dbname'] = 'gjyptdb_test';
+//这个参数其实没有用，要照我随后的修改就可以用了
+$_config['db']['2']['tablepre'] = '';
+//配置数据库表名
+$_config['db']['map']['sys_student'] = 2;
+$_config['db']['map']['sys_user'] = 2;
+
 // --------------------------  CONFIG MEMORY  --------------------------- //
 $_config['memory']['prefix'] = 'KEwa5V_';
 $_config['memory']['redis']['server'] = '';

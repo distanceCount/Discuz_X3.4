@@ -11,7 +11,7 @@ if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
 
-class db_driver_mysql
+class db_driver_mysql_bi
 {
 	var $tablepre;
 	var $version = '';
@@ -32,7 +32,7 @@ class db_driver_mysql
 
 	function set_config($config) {
 		$this->config = &$config;
-		$this->tablepre = $config['1']['tablepre'];
+		$this->tablepre = $config['2']['tablepre'];
 		if(!empty($this->config['map'])) {
 			$this->map = $this->config['map'];
 			for($i = 1; $i <= 100; $i++) {
@@ -59,7 +59,7 @@ class db_driver_mysql
 		}
 	}
 
-	function connect($serverid = 1) {
+	function connect($serverid = 2) {
 
 		if(empty($this->config) || empty($this->config[$serverid])) {
 			$this->halt('config_db_not_found');

@@ -120,6 +120,7 @@ class usercontrol extends base {
 		}
 
 		if($isuid == 1) {
+		    //get_user_by_uid
 			$user = $_ENV['user']->get_user_by_uid($username);
 		} elseif($isuid == 2) {
 			$user = $_ENV['user']->get_user_by_email($username);
@@ -137,7 +138,12 @@ class usercontrol extends base {
 		} elseif($checkques && $user['secques'] != $_ENV['user']->quescrypt($questionid, $answer)) {
 			$status = -3;
 		} else {
-			$status = $user['uid'];
+		    //if ($user['student_id'] === null){
+		    //    $status = $user['user_id'];
+            //}elseif ($user['user_id'] === null ){
+		    //    $status = $user['student_id'];
+            //}
+            $status = $user['uid'];
 		}
 		if($ip && $this->settings['login_failedtime'] && $status <= 0) {
 			$_ENV['user']->loginfailed($username, $ip);

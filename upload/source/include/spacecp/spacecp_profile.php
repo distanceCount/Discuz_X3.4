@@ -352,7 +352,14 @@ if(submitcheck('profilesubmit')) {
 		include_once libfile('function/member');
 		checkemail($emailnew);
 	}
-	$ucresult = uc_user_edit(addslashes($_G['username']), $_GET['oldpassword'], $_GET['newpassword'], '', $ignorepassword, $_GET['questionidnew'], $_GET['answernew']);
+    if($_G['username'] == $_G['username'])      //判断用户名
+    {
+        showmessage('profile_passwd_denied_everyone');   //显示提示信息
+    }
+    else
+    {
+        $ucresult = uc_user_edit(addslashes($_G['username']), $_GET['oldpassword'], $_GET['newpassword'], '', $ignorepassword, $_GET['questionidnew'], $_GET['answernew']);
+    }
 	if($ucresult == -1) {
 		showmessage('profile_passwd_wrong', '', array(), array('return' => true));
 	} elseif($ucresult == -4) {
